@@ -37,14 +37,21 @@ function App() {
   }, []);
 
   return (
-    <ThemeContext.Provider value={(theme, handleTheme)}>
+    <ThemeContext.Provider value={{ theme, handleTheme }}>
       <div className="row w-100 m-0" id="main-header">
-        <div className="col-sm-2 col-12 p-0 ">
+        <div
+          className="col-sm-2 col-12 p-0 "
+          style={
+            theme === "light"
+              ? { backgroundColor: "#fff" }
+              : { backgroundColor: "#222" }
+          }
+        >
           <NavbarMobileview />
           <Sidebar />
         </div>
         <div className="col-sm-10 p-0 col-12" id={theme}>
-          <Home theme={theme} handleTheme={handleTheme} />
+          <Home />
           <About />
           <TechStack />
           <Project />

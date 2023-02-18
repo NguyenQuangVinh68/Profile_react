@@ -3,8 +3,11 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
 import "./Home.css";
 import MyCV from "../../assets/mycv/MyCV.pdf";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
-function Home({ theme, handleTheme }) {
+function Home() {
+  const { theme, handleTheme } = useContext(ThemeContext);
   return (
     <div className="container text-white" id="home">
       {/* btn change theme */}

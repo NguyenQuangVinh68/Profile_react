@@ -1,6 +1,11 @@
 import "./Contact.css";
 import studywithme from "../../assets/image/studywithme.png";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
+
 function Contact() {
+  const { theme } = useContext(ThemeContext);
+  console.log(theme);
   return (
     <div className="container my-5" id="contact">
       <div className="row mt-5">
@@ -8,7 +13,14 @@ function Contact() {
           <img src={studywithme} className="w-100"></img>
         </div>
         <div className="col-sm-6">
-          <div className="card border-0 shadow">
+          <div
+            className="card border-0 shadow"
+            style={
+              theme === "light"
+                ? { backgroundColor: "#fff" }
+                : { backgroundColor: "#222" }
+            }
+          >
             <h3 className="card-title text-center">Contact Form</h3>
             <div className="card-body">
               <form>
