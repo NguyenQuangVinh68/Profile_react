@@ -31,6 +31,7 @@ function Home() {
           <Typewriter
             options={{
               strings: [
+                "Nguyễn Quang Vịnh",
                 "Fullstack Developer",
                 "PHP Developer",
                 "Design Wordpress",
